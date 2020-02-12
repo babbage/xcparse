@@ -9,7 +9,11 @@ let package = Package(
        .macOS(.v10_13),
     ],
     products: [
-        .executable(name: "xcparse", targets: ["xcparse"]),
+        .executable(name: "xcparse", targets: ["XCParse"]),
+        .library(
+            name: "XCParse",
+            targets: ["XCParse"]
+        ),
         .library(
             name: "XCParseCore",
             targets: ["XCParseCore"]
@@ -24,7 +28,7 @@ let package = Package(
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
-            name: "xcparse",
+            name: "XCParse",
             dependencies: [ "XCParseCore", "SPMUtility" ]),
         .target(
             name: "XCParseCore",
